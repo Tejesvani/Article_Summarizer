@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+    <style>
+        body {
+            background-image: url(static/images/bg.jpg);
+            background-repeat:no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .container {
+            background-color: #e7ebee;
+            display: block;
+            margin-top: 200px;
+            margin-left: auto;
+            margin-bottom: auto;
+            margin-right: auto;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            position: auto;
+            text-align: center;
+            width: 768px;
+            max-width: 75%;
+            min-height: 75%;
+        }        
+
+        .button {
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 20px;
+            padding: 15px;
+            width: 175px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <form action="{{ url_for('redirect') }}" method="post">
+            <h1>Article Summarizer</h1>
+            <button class="button" type="submit" name="Single Doc" value="Single"><span> Single Doc </span></button>
+            <button class="button" type="submit" name="Multi Doc" value="Multi"><span> Multi Doc </span></button>
+        </form>
+    </div>
+</body>
+</html>
+
+
